@@ -1,0 +1,23 @@
+$stationSize: 18px
+
+&
+  display: block
+  width: $stationSize
+  height: $stationSize
+  background: $colorLightGray
+  color: #fff
+  border-radius: 50%
+  text-align: center
+  line-height: $stationSize
+  font-size: 10px
+  position: relative
+
+  &--available
+    background: $colorGreen
+
+  &--highlighted
+    border: 2px solid rgba(#000, .8)
+    z-index: 1
+
+  &--own
+    background: #000
