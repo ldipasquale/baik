@@ -8,7 +8,7 @@ import { gkbaToCoordinates } from 'util/coordinates'
 
 function fetch(id) {
   return axios
-    .get(`http://epok.buenosaires.gob.ar/getObjectContent/?id=${id}`)
+    .get(`https://epok.buenosaires.gob.ar/getObjectContent/?id=${id}`)
     .then(response => response.data.contenido)
     .then(data => ({
       id,
@@ -22,7 +22,7 @@ function fetch(id) {
 
 function fetchAll() {
   return axios
-    .get('http://epok.buenosaires.gob.ar/getGeoLayer/?categoria=estaciones_de_bicicletas&estado=*&formato=geojson')
+    .get('https://epok.buenosaires.gob.ar/getGeoLayer/?categoria=estaciones_de_bicicletas&estado=*&formato=geojson')
     .then(response => response.data.features.map(station => ({
       id: station.properties.Id,
       name: station.properties.Nombre,

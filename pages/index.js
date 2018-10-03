@@ -3,8 +3,6 @@ import GoogleMapReact from 'google-map-react';
 
 import Station from 'components/Station'
 
-import googleConfig from 'config/google'
-
 import Stations from 'services/Stations'
 import Coordinates from 'services/Coordinates'
 
@@ -65,7 +63,7 @@ class Map extends React.Component {
             defaultCenter={this.state.centerCoordinates}
             defaultZoom={this.state.zoom}
             bootstrapURLKeys={{
-              key: googleConfig.key,
+              key: process.env.GOOGLE_KEY,
             }}
           >
             {this.state.stations.map((station, stationIndex) => (
